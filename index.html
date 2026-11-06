@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Klassischer Gitarrenunterricht Wien | Classical Guitar Studio</title>
+    <style>
+        :root {
+            --primary: #5c4033;
+            --secondary: #c5a059;
+            --dark: #222222;
+            --light: #f9f6f0;
+            --white: #ffffff;
+        }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Georgia', 'Times New Roman', serif;
+        }
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        header {
+            background-color: var(--white);
+            border-bottom: 2px solid var(--secondary);
+            padding: 20px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        nav a {
+            text-decoration: none;
+            color: var(--dark);
+            margin-left: 20px;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: var(--secondary);
+        }
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1510915361894-db8b60106cb1?auto=format&fit=crop&w=1200&q=80') no-repeat center center/cover;
+            color: var(--white);
+            text-align: center;
+            padding: 100px 20px;
+        }
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            font-style: italic;
+        }
+        .cta-btn {
+            display: inline-block;
+            background-color: var(--secondary);
+            color: var(--white);
+            padding: 15px 30px;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 4px;
+            transition: background 0.3s;
+            text-transform: uppercase;
+        }
+        .cta-btn:hover {
+            background-color: var(--primary);
+        }
+        .container {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 32px;
+            color: var(--primary);
+            margin-bottom: 10px;
+            position: relative;
+        }
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 2px;
+            background-color: var(--secondary);
+            margin: 15px auto 0;
+        }
+        .section-subtitle {
+            text-align: center;
+            font-style: italic;
+            color: #666;
+            margin-bottom: 40px;
+        }
+        .card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 4px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border-top: 4px solid var(--secondary);
+        }
+        .card h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 22px;
+        }
+        .price-tag {
+            font-size: 28px;
+            font-weight: bold;
+            color: var(--dark);
+            margin: 15px 0;
+        }
+        .about-section {
+            background-color: var(--white);
+            padding: 60px 20px;
+            border-top: 1px solid #eee;
+            border-bottom: 1px solid #eee;
+        }
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .about-content p {
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: var(--white);
+            padding: 40px;
+            border-radius: 4px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        footer {
+            background-color: var(--dark);
+            color: #aaa;
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 60px;
+            font-size: 14px;
+        }
+        footer a {
+            color: var(--secondary);
+            text-decoration: none;
+        }
+        .lang-switch {
+            font-size: 12px;
+            border: 1px solid var(--secondary);
+            padding: 2px 6px;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <div class="logo">Gitarrenstudio Wien</div>
+            <nav>
+                <a href="#angebot">Angebot</a>
+                <a href="#ueber-mich">Über mich</a>
+                <a href="#preise">Preise</a>
+                <a href="#kontakt" class="lang-switch">DE / EN</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h1>Klassischer Gitarrenunterricht in Wien</h1>
+        <p>Entdecken Sie die Welt der klassischen Gitarre – vom Anfänger bis zur Musikhochschul-Vorbereitung.</p>
+        <a href="#kontakt" class="cta-btn">Kostenlose Probestunde buchen</a>
+    </section>
+
+    <section id="angebot" class="container">
+        <h2 class="section-title">Mein Unterrichtsangebot</h2>
+        <p class="section-subtitle">Maßgeschneiderter Unterricht für jedes Alter und Niveau im Herzen von Wien</p>
+        <div class="grid">
+            <div class="card">
+                <h3>Für Kinder & Jugendliche</h3>
+                <p>Spielerischer Einstieg in das klassische Gitarrenspiel. Förderung von Rhythmusgefühl, Notenlesen und einer gesunden Haltung von Anfang an.</p>
+            </div>
+            <div class="card">
+                <h3>Für Erwachsene & Wiedereinsteiger</h3>
+                <p>Flexibler Unterricht, der sich Ihrem Alltag anpasst. Lernen Sie Ihre Lieblingsstücke von Bach bis Tarrega ohne Leistungsdruck.</p>
+            </div>
+            <div class="card">
+                <h3>Konservatoriums-Vorbereitung</h3>
+                <p>Intensive Vorbereitung auf Aufnahmeprüfungen (mdw / MUK) inklusive Technik-Coaching, Repertoire-Auswahl und Auftrittstraining.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="ueber-mich" class="about-section">
+        <div class="about-content">
+            <h2 class="section-title">Über mich</h2>
+            <p class="section-subtitle">Ihr professioneller Gitarrenlehrer in Wien</p>
+            <p>Willkommen! Mein Name ist [Ihr Name]. Als diplomierter klassischer Gitarrist mit einem Master-Abschluss an der <strong>Universität für Musik und darstellende Kunst Wien (mdw)</strong> gebe ich meine Leidenschaft für die Musik an meine Schüler weiter.</p>
+            <p>Mein Unterricht verbindet die traditionsreiche Wiener Gitarrenschule mit modernen pädagogischen Ansätzen. Der Spaß am Musizieren steht dabei immer im Vordergrund, unabhängig davon, ob Sie Hobbyist oder zukünftiger Profi sind.</p>
+        </div>
+    </section>
+
+    <section id="preise" class="container">
+        <h2 class="section-title">Preise & Konditionen</h2>
+        <p class="section-subtitle">Transparente Honorare ohne versteckte Vertragslaufzeiten</p>
+        <div class="grid">
+            <div class="card" style="text-align: center;">
+                <h3>30 Minuten</h3>
+                <p>Ideal für jüngere Kinder</p>
+                <div class="price-tag">€ 35,-</div>
+                <p>pro Einzelstunde</p>
+            </div>
+            <div class="card" style="text-align: center;">
+                <h3>45 Minuten</h3>
+                <p>Der Standard für Jugendliche & Erwachsene</p>
+                <div class="price-tag">€ 48,-</div>
+                <p>pro Einzelstunde</p>
+            </div>
+            <div class="card" style="text-align: center;">
+                <h3>60 Minuten</h3>
+                <p>Perfekt für Fortgeschrittene & Vorbereitung</p>
+                <div class="price-tag">€ 60,-</div>
+                <p>pro Einzelstunde</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="kontakt" class="container">
+        <h2 class="section-title">Jetzt Probestunde vereinbaren</h2>
+        <p class="section-subtitle">Lernen wir uns kennen! Die erste Kennenlern-Stunde (30 Min) ist komplett kostenlos.</p>
+        
+        <div class="contact-form">
+            <form onsubmit="event.preventDefault(); alert('Vielen Dank für Ihre Anfrage! Ich werde mich in Kürze bei Ihnen melden.');">
+                <div class="form-group">
+                    <label for="name">Name *</label>
+                    <input type="text" id="name" required placeholder="Ihr vollständiger Name">
+                </div>
+                <div class="form-group">
+                    <label for="email">E-Mail-Adresse *</label>
+                    <input type="email" id="email" required placeholder="name@beispiel.at">
+                </div>
+                <div class="form-group">
+                    <label for="tel">Telefonnummer</label>
+                    <input type="tel" id="tel" placeholder="+43 660 ...">
+                </div>
+                <div class="form-group">
+                    <label for="niveau">Erfahrung / Niveau</label>
+                    <select id="niveau">
+                        <option>Anfänger (Keine Vorkenntnisse)</option>
+                        <option>Leicht Fortgeschritten</option>
+                        <option>Fortgeschritten / Vorbereitung</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="message">Nachricht / Wunschtermin</label>
+                    <textarea id="message" rows="4" placeholder="Hinterlassen Sie mir eine Nachricht..."></textarea>
+                </div>
+                <button type="submit" class="cta-btn" style="width: 100%; border: none; cursor: pointer;">Probestunde Absenden</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Gitarrenstudio Wien - [Ihr Name]. Alle Rechte vorbehalten.</p>
+        <p style="margin-top: 10px; font-size: 12px;"><a href="#">Impressum</a> | <a href="#">Datenschutz</a></p>
+    </footer>
+
+</body>
+</html>
