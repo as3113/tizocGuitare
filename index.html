@@ -45,14 +45,14 @@
             text-transform: uppercase;
             letter-spacing: 1px;
         }
-        nav a {
+        nav a, nav button {
             text-decoration: none;
             color: var(--dark);
             margin-left: 20px;
             font-weight: bold;
             transition: color 0.3s;
         }
-        nav a:hover {
+        nav a:hover, nav button:hover {
             color: var(--secondary);
         }
         .hero {
@@ -191,6 +191,14 @@
             border: 1px solid var(--secondary);
             padding: 2px 6px;
             border-radius: 3px;
+            background: transparent;
+            cursor: pointer;
+        }
+        @media (max-width: 700px) {
+            .nav-container { flex-direction: column; gap: 12px; }
+            nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; }
+            nav a, nav button { margin-left: 0; }
+            .hero h1 { font-size: 32px; }
         }
     </style>
 </head>
@@ -198,114 +206,210 @@
 
     <header>
         <div class="nav-container">
-            <div class="logo">Gitarrenstudio Wien</div>
-            <nav>
-                <a href="#angebot">Angebot</a>
-                <a href="#ueber-mich">Über mich</a>
-                <a href="#preise">Preise</a>
-                <a href="#kontakt" class="lang-switch">DE / EN</a>
+            <div class="logo" data-i18n="logo">Gitarrenstudio Wien</div>
+            <nav aria-label="Hauptnavigation">
+                <a href="#angebot" data-i18n="navOffer">Angebot</a>
+                <a href="#ueber-mich" data-i18n="navAbout">Über mich</a>
+                <a href="#preise" data-i18n="navPrices">Preise</a>
+                <button type="button" class="lang-switch" id="language-toggle" aria-label="Switch to English">EN</button>
             </nav>
         </div>
     </header>
 
     <section class="hero">
-        <h1>Klassischer Gitarrenunterricht in Wien</h1>
-        <p>Entdecken Sie die Welt der klassischen Gitarre – vom Anfänger bis zur Musikhochschul-Vorbereitung.</p>
-        <a href="#kontakt" class="cta-btn">Kostenlose Probestunde buchen</a>
+        <h1 data-i18n="heroTitle">Klassischer Gitarrenunterricht in Wien</h1>
+        <p data-i18n="heroSubtitle">Entdecken Sie die Welt der klassischen Gitarre – vom Anfänger bis zur Musikhochschul-Vorbereitung.</p>
+        <a href="#kontakt" class="cta-btn" data-i18n="heroCta">Kostenlose Probestunde buchen</a>
     </section>
 
     <section id="angebot" class="container">
-        <h2 class="section-title">Mein Unterrichtsangebot</h2>
-        <p class="section-subtitle">Maßgeschneiderter Unterricht für jedes Alter und Niveau im Herzen von Wien</p>
+        <h2 class="section-title" data-i18n="offerTitle">Mein Unterrichtsangebot</h2>
+        <p class="section-subtitle" data-i18n="offerSubtitle">Maßgeschneiderter Unterricht für jedes Alter und Niveau im Herzen von Wien</p>
         <div class="grid">
             <div class="card">
-                <h3>Für Kinder & Jugendliche</h3>
-                <p>Spielerischer Einstieg in das klassische Gitarrenspiel. Förderung von Rhythmusgefühl, Notenlesen und einer gesunden Haltung von Anfang an.</p>
+                <h3 data-i18n="offerChildrenTitle">Für Kinder & Jugendliche</h3>
+                <p data-i18n="offerChildrenText">Spielerischer Einstieg in das klassische Gitarrenspiel. Förderung von Rhythmusgefühl, Notenlesen und einer gesunden Haltung von Anfang an.</p>
             </div>
             <div class="card">
-                <h3>Für Erwachsene & Wiedereinsteiger</h3>
-                <p>Flexibler Unterricht, der sich Ihrem Alltag anpasst. Lernen Sie Ihre Lieblingsstücke von Bach bis Tarrega ohne Leistungsdruck.</p>
+                <h3 data-i18n="offerAdultsTitle">Für Erwachsene & Wiedereinsteiger</h3>
+                <p data-i18n="offerAdultsText">Flexibler Unterricht, der sich Ihrem Alltag anpasst. Lernen Sie Ihre Lieblingsstücke von Bach bis Tarrega ohne Leistungsdruck.</p>
             </div>
             <div class="card">
-                <h3>Konservatoriums-Vorbereitung</h3>
-                <p>Intensive Vorbereitung auf Aufnahmeprüfungen (mdw / MUK) inklusive Technik-Coaching, Repertoire-Auswahl und Auftrittstraining.</p>
+                <h3 data-i18n="offerPrepTitle">Konservatoriums-Vorbereitung</h3>
+                <p data-i18n="offerPrepText">Intensive Vorbereitung auf Aufnahmeprüfungen (mdw / MUK) inklusive Technik-Coaching, Repertoire-Auswahl und Auftrittstraining.</p>
             </div>
         </div>
     </section>
 
     <section id="ueber-mich" class="about-section">
         <div class="about-content">
-            <h2 class="section-title">Über mich</h2>
-            <p class="section-subtitle">Ihr professioneller Gitarrenlehrer in Wien</p>
-            <p>Willkommen! Mein Name ist [Ihr Name]. Als diplomierter klassischer Gitarrist mit einem Master-Abschluss an der <strong>Universität für Musik und darstellende Kunst Wien (mdw)</strong> gebe ich meine Leidenschaft für die Musik an meine Schüler weiter.</p>
-            <p>Mein Unterricht verbindet die traditionsreiche Wiener Gitarrenschule mit modernen pädagogischen Ansätzen. Der Spaß am Musizieren steht dabei immer im Vordergrund, unabhängig davon, ob Sie Hobbyist oder zukünftiger Profi sind.</p>
+            <h2 class="section-title" data-i18n="aboutTitle">Über mich</h2>
+            <p class="section-subtitle" data-i18n="aboutSubtitle">Ihr professioneller Gitarrenlehrer in Wien</p>
+            <p data-i18n="aboutParagraph1">Willkommen! Mein Name ist [Ihr Name]. Als diplomierter klassischer Gitarrist mit einem Master-Abschluss an der <strong>Universität für Musik und darstellende Kunst Wien (mdw)</strong> freue ich mich, meine Leidenschaft für die Gitarre mit meinen Schüler:innen zu teilen.</p>
+            <p data-i18n="aboutParagraph2">Mein Unterricht verbindet die traditionsreiche Wiener Gitarrenschule mit modernen pädagogischen Ansätzen. Der Spaß am Musizieren steht dabei immer im Vordergrund, unabhängig davon, ob Sie gerade erst beginnen oder bereits fortgeschritten sind.</p>
         </div>
     </section>
 
     <section id="preise" class="container">
-        <h2 class="section-title">Preise & Konditionen</h2>
-        <p class="section-subtitle">Transparente Honorare ohne versteckte Vertragslaufzeiten</p>
+        <h2 class="section-title" data-i18n="pricesTitle">Preise & Konditionen</h2>
+        <p class="section-subtitle" data-i18n="pricesSubtitle">Transparente Honorare ohne versteckte Vertragslaufzeiten</p>
         <div class="grid">
             <div class="card" style="text-align: center;">
-                <h3>30 Minuten</h3>
-                <p>Ideal für jüngere Kinder</p>
+                <h3 data-i18n="price30Title">30 Minuten</h3>
+                <p data-i18n="price30Description">Ideal für jüngere Kinder</p>
                 <div class="price-tag">€ 35,-</div>
-                <p>pro Einzelstunde</p>
+                <p data-i18n="perLesson">pro Einzelstunde</p>
             </div>
             <div class="card" style="text-align: center;">
-                <h3>45 Minuten</h3>
-                <p>Der Standard für Jugendliche & Erwachsene</p>
+                <h3 data-i18n="price45Title">45 Minuten</h3>
+                <p data-i18n="price45Description">Der Standard für Jugendliche & Erwachsene</p>
                 <div class="price-tag">€ 48,-</div>
-                <p>pro Einzelstunde</p>
+                <p data-i18n="perLesson">pro Einzelstunde</p>
             </div>
             <div class="card" style="text-align: center;">
-                <h3>60 Minuten</h3>
-                <p>Perfekt für Fortgeschrittene & Vorbereitung</p>
+                <h3 data-i18n="price60Title">60 Minuten</h3>
+                <p data-i18n="price60Description">Perfekt für Fortgeschrittene & Vorbereitung</p>
                 <div class="price-tag">€ 60,-</div>
-                <p>pro Einzelstunde</p>
+                <p data-i18n="perLesson">pro Einzelstunde</p>
             </div>
         </div>
     </section>
 
     <section id="kontakt" class="container">
-        <h2 class="section-title">Jetzt Probestunde vereinbaren</h2>
-        <p class="section-subtitle">Lernen wir uns kennen! Die erste Kennenlern-Stunde (30 Min) ist komplett kostenlos.</p>
-        
+        <h2 class="section-title" data-i18n="contactTitle">Jetzt Probestunde vereinbaren</h2>
+        <p class="section-subtitle" data-i18n="contactSubtitle">Lernen wir uns kennen! Die erste Kennenlern-Stunde (30 Min) ist komplett kostenlos.</p>
         <div class="contact-form">
-            <form onsubmit="event.preventDefault(); alert('Vielen Dank für Ihre Anfrage! Ich werde mich in Kürze bei Ihnen melden.');">
+            <form id="contact-form">
                 <div class="form-group">
-                    <label for="name">Name *</label>
-                    <input type="text" id="name" required placeholder="Ihr vollständiger Name">
+                    <label for="name" data-i18n="nameLabel">Name *</label>
+                    <input type="text" id="name" required placeholder="Ihr vollständiger Name" data-i18n-placeholder="namePlaceholder">
                 </div>
                 <div class="form-group">
-                    <label for="email">E-Mail-Adresse *</label>
-                    <input type="email" id="email" required placeholder="name@beispiel.at">
+                    <label for="email" data-i18n="emailLabel">E-Mail-Adresse *</label>
+                    <input type="email" id="email" required placeholder="name@beispiel.at" data-i18n-placeholder="emailPlaceholder">
                 </div>
                 <div class="form-group">
-                    <label for="tel">Telefonnummer</label>
-                    <input type="tel" id="tel" placeholder="+43 660 ...">
+                    <label for="tel" data-i18n="phoneLabel">Telefonnummer</label>
+                    <input type="tel" id="tel" placeholder="+43 660 ..." data-i18n-placeholder="phonePlaceholder">
                 </div>
                 <div class="form-group">
-                    <label for="niveau">Erfahrung / Niveau</label>
+                    <label for="niveau" data-i18n="levelLabel">Erfahrung / Niveau</label>
                     <select id="niveau">
-                        <option>Anfänger (Keine Vorkenntnisse)</option>
-                        <option>Leicht Fortgeschritten</option>
-                        <option>Fortgeschritten / Vorbereitung</option>
+                        <option data-i18n="levelBeginner">Anfänger (Keine Vorkenntnisse)</option>
+                        <option data-i18n="levelIntermediate">Leicht Fortgeschritten</option>
+                        <option data-i18n="levelAdvanced">Fortgeschritten / Vorbereitung</option>
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="message">Nachricht / Wunschtermin</label>
-                    <textarea id="message" rows="4" placeholder="Hinterlassen Sie mir eine Nachricht..."></textarea>
+                    <label for="message" data-i18n="messageLabel">Nachricht / Wunschtermin</label>
+                    <textarea id="message" rows="4" placeholder="Hinterlassen Sie mir eine Nachricht..." data-i18n-placeholder="messagePlaceholder"></textarea>
                 </div>
-                <button type="submit" class="cta-btn" style="width: 100%; border: none; cursor: pointer;">Probestunde Absenden</button>
+                <button type="submit" class="cta-btn" style="width: 100%; border: none; cursor: pointer;" data-i18n="submitButton">Probestunde Absenden</button>
             </form>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2026 Gitarrenstudio Wien - [Ihr Name]. Alle Rechte vorbehalten.</p>
-        <p style="margin-top: 10px; font-size: 12px;"><a href="#">Impressum</a> | <a href="#">Datenschutz</a></p>
+        <p data-i18n="copyright">&copy; 2026 Gitarrenstudio Wien - [Ihr Name]. Alle Rechte vorbehalten.</p>
+        <p style="margin-top: 10px; font-size: 12px;"><a href="#" data-i18n="imprint">Impressum</a> | <a href="#" data-i18n="privacy">Datenschutz</a></p>
     </footer>
 
+    <script>
+        const translations = {
+            de: {
+                logo: 'Gitarrenstudio Wien', navOffer: 'Angebot', navAbout: 'Über mich', navPrices: 'Preise',
+                heroTitle: 'Klassischer Gitarrenunterricht in Wien',
+                heroSubtitle: 'Entdecken Sie die Welt der klassischen Gitarre – vom Anfänger bis zur Musikhochschul-Vorbereitung.',
+                heroCta: 'Kostenlose Probestunde buchen', offerTitle: 'Mein Unterrichtsangebot',
+                offerSubtitle: 'Maßgeschneiderter Unterricht für jedes Alter und Niveau im Herzen von Wien',
+                offerChildrenTitle: 'Für Kinder & Jugendliche',
+                offerChildrenText: 'Spielerischer Einstieg in das klassische Gitarrenspiel. Förderung von Rhythmusgefühl, Notenlesen und einer gesunden Haltung von Anfang an.',
+                offerAdultsTitle: 'Für Erwachsene & Wiedereinsteiger',
+                offerAdultsText: 'Flexibler Unterricht, der sich Ihrem Alltag anpasst. Lernen Sie Ihre Lieblingsstücke von Bach bis Tarrega ohne Leistungsdruck.',
+                offerPrepTitle: 'Konservatoriums-Vorbereitung',
+                offerPrepText: 'Intensive Vorbereitung auf Aufnahmeprüfungen (mdw / MUK) inklusive Technik-Coaching, Repertoire-Auswahl und Auftrittstraining.',
+                aboutTitle: 'Über mich', aboutSubtitle: 'Ihr professioneller Gitarrenlehrer in Wien',
+                aboutParagraph1: 'Willkommen! Mein Name ist [Ihr Name]. Als diplomierter klassischer Gitarrist mit einem Master-Abschluss an der <strong>Universität für Musik und darstellende Kunst Wien (mdw)</strong> freue ich mich, meine Leidenschaft für die Gitarre mit meinen Schüler:innen zu teilen.',
+                aboutParagraph2: 'Mein Unterricht verbindet die traditionsreiche Wiener Gitarrenschule mit modernen pädagogischen Ansätzen. Der Spaß am Musizieren steht dabei immer im Vordergrund, unabhängig davon, ob Sie gerade erst beginnen oder bereits fortgeschritten sind.',
+                pricesTitle: 'Preise & Konditionen', pricesSubtitle: 'Transparente Honorare ohne versteckte Vertragslaufzeiten',
+                price30Title: '30 Minuten', price30Description: 'Ideal für jüngere Kinder',
+                price45Title: '45 Minuten', price45Description: 'Der Standard für Jugendliche & Erwachsene',
+                price60Title: '60 Minuten', price60Description: 'Perfekt für Fortgeschrittene & Vorbereitung', perLesson: 'pro Einzelstunde',
+                contactTitle: 'Jetzt Probestunde vereinbaren',
+                contactSubtitle: 'Lernen wir uns kennen! Die erste Kennenlern-Stunde (30 Min) ist komplett kostenlos.',
+                nameLabel: 'Name *', emailLabel: 'E-Mail-Adresse *', phoneLabel: 'Telefonnummer', levelLabel: 'Erfahrung / Niveau',
+                levelBeginner: 'Anfänger (Keine Vorkenntnisse)', levelIntermediate: 'Leicht Fortgeschritten',
+                levelAdvanced: 'Fortgeschritten / Vorbereitung', messageLabel: 'Nachricht / Wunschtermin',
+                submitButton: 'Probestunde Absenden', copyright: '© 2026 Gitarrenstudio Wien - [Ihr Name]. Alle Rechte vorbehalten.',
+                imprint: 'Impressum', privacy: 'Datenschutz',
+                namePlaceholder: 'Ihr vollständiger Name', emailPlaceholder: 'name@beispiel.at',
+                phonePlaceholder: '+43 660 ...', messagePlaceholder: 'Hinterlassen Sie mir eine Nachricht...',
+                alert: 'Vielen Dank für Ihre Anfrage! Ich werde mich in Kürze bei Ihnen melden.'
+            },
+            en: {
+                logo: 'Vienna Guitar Studio', navOffer: 'Lessons', navAbout: 'About me', navPrices: 'Prices',
+                heroTitle: 'Classical Guitar Lessons in Vienna',
+                heroSubtitle: 'Discover the world of classical guitar—from beginner lessons to conservatory entrance preparation.',
+                heroCta: 'Book a free trial lesson', offerTitle: 'Lessons I Offer',
+                offerSubtitle: 'Tailored lessons for every age and level in the heart of Vienna',
+                offerChildrenTitle: 'Children & Teenagers',
+                offerChildrenText: 'A fun introduction to classical guitar. Develop rhythm, music reading and healthy playing posture from the very beginning.',
+                offerAdultsTitle: 'Adults & Returning Players',
+                offerAdultsText: 'Flexible lessons that fit your schedule. Learn your favorite pieces, from Bach to Tárrega, without pressure.',
+                offerPrepTitle: 'Conservatory Preparation',
+                offerPrepText: 'Focused preparation for entrance auditions (mdw / MUK), including technique coaching, repertoire selection and performance practice.',
+                aboutTitle: 'About Me', aboutSubtitle: 'Your professional guitar teacher in Vienna',
+                aboutParagraph1: 'Welcome! My name is [Your Name]. I am a classical guitarist with a master’s degree from the <strong>University of Music and Performing Arts Vienna (mdw)</strong>, and I look forward to sharing my passion for guitar with my students.',
+                aboutParagraph2: 'My teaching combines Vienna’s rich guitar tradition with modern teaching methods. Enjoying music is always at the heart of my lessons, whether you are just starting out or already an advanced player.',
+                pricesTitle: 'Prices & Terms', pricesSubtitle: 'Transparent rates with no hidden long-term commitments',
+                price30Title: '30 minutes', price30Description: 'Ideal for younger children',
+                price45Title: '45 minutes', price45Description: 'The standard for teenagers & adults',
+                price60Title: '60 minutes', price60Description: 'Perfect for advanced players & audition preparation', perLesson: 'per private lesson',
+                contactTitle: 'Book a Trial Lesson',
+                contactSubtitle: 'Let’s get to know each other! Your first 30-minute introductory lesson is completely free.',
+                nameLabel: 'Name *', emailLabel: 'Email address *', phoneLabel: 'Phone number', levelLabel: 'Experience / Level',
+                levelBeginner: 'Beginner (no previous experience)', levelIntermediate: 'Early intermediate',
+                levelAdvanced: 'Advanced / audition preparation', messageLabel: 'Message / Preferred time',
+                submitButton: 'Send Trial Lesson Request', copyright: '© 2026 Vienna Guitar Studio - [Your Name]. All rights reserved.',
+                imprint: 'Legal notice', privacy: 'Privacy policy',
+                namePlaceholder: 'Your full name', emailPlaceholder: 'name@example.com',
+                phonePlaceholder: '+43 660 ...', messagePlaceholder: 'Leave me a message...',
+                alert: 'Thank you for your inquiry! I will get back to you shortly.'
+            }
+        };
+
+        let currentLanguage = 'de';
+        const languageToggle = document.getElementById('language-toggle');
+
+        function setLanguage(language) {
+            currentLanguage = language;
+            document.documentElement.lang = language;
+
+            document.querySelectorAll('[data-i18n]').forEach((element) => {
+                const key = element.dataset.i18n;
+                element.innerHTML = translations[language][key];
+            });
+            document.querySelectorAll('[data-i18n-placeholder]').forEach((element) => {
+                const key = element.dataset.i18nPlaceholder;
+                element.placeholder = translations[language][key];
+            });
+
+            // Show the language the visitor can switch to.
+            languageToggle.textContent = language === 'de' ? 'EN' : 'DE';
+            languageToggle.setAttribute('aria-label', language === 'de' ? 'Switch to English' : 'Auf Deutsch wechseln');
+            document.title = language === 'de'
+                ? 'Klassischer Gitarrenunterricht Wien | Classical Guitar Studio'
+                : 'Classical Guitar Lessons Vienna | Vienna Guitar Studio';
+        }
+
+        languageToggle.addEventListener('click', () => {
+            setLanguage(currentLanguage === 'de' ? 'en' : 'de');
+        });
+
+        document.getElementById('contact-form').addEventListener('submit', (event) => {
+            event.preventDefault();
+            alert(translations[currentLanguage].alert);
+        });
+    </script>
 </body>
 </html>
