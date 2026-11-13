@@ -5,13 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Klassischer Gitarrenunterricht Wien | Classical Guitar Studio</title>
     <style>
-        :root {
-            --primary: #5c4033;
-            --secondary: #c5a059;
-            --dark: #222222;
-            --light: #f9f6f0;
-            --white: #ffffff;
-        }
+        :root { --primary: #5c4033; --secondary: #c5a059; --dark: #222222; --light: #f9f6f0; --white: #ffffff; }
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Georgia', 'Times New Roman', serif; }
         body { background-color: var(--light); color: var(--dark); line-height: 1.6; }
         header { background-color: var(--white); border-bottom: 2px solid var(--secondary); padding: 20px; position: sticky; top: 0; z-index: 1000; }
@@ -19,27 +13,8 @@
         .logo { font-size: 24px; font-weight: bold; color: var(--primary); text-transform: uppercase; letter-spacing: 1px; }
         nav a, nav button { text-decoration: none; color: var(--dark); margin-left: 20px; font-weight: bold; transition: color 0.3s; }
         nav a:hover, nav button:hover { color: var(--secondary); }
-        .hero {
-            display: grid;
-            grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-            grid-template-rows: auto auto auto;
-            align-items: center;
-            gap: 20px 48px;
-            min-height: 480px;
-            padding: 60px max(20px, calc((100% - 1200px) / 2));
-            background-color: var(--dark);
-            color: var(--white);
-            text-align: center;
-        }
-        .hero::before {
-            content: '';
-            grid-column: 1;
-            grid-row: 1 / 4;
-            width: 100%;
-            height: 100%;
-            min-height: 360px;
-            background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('guitarhero.jpg') center / contain no-repeat;
-        }
+        .hero { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); grid-template-rows: auto auto auto; align-items: center; gap: 20px 48px; min-height: 480px; padding: 60px max(20px, calc((100% - 1200px) / 2)); background-color: var(--dark); color: var(--white); text-align: center; }
+        .hero::before { content: ''; grid-column: 1; grid-row: 1 / 4; width: 100%; height: 100%; min-height: 360px; background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('guitarhero.jpg') center / contain no-repeat; }
         .hero h1, .hero p, .hero .cta-btn { grid-column: 2; }
         .hero h1 { font-size: 42px; margin-bottom: 0; letter-spacing: 1px; }
         .hero p { font-size: 20px; margin-bottom: 10px; font-style: italic; }
@@ -56,6 +31,7 @@
         .about-section { background-color: var(--white); padding: 60px 20px; border-top: 1px solid #eee; border-bottom: 1px solid #eee; }
         .about-content { max-width: 800px; margin: 0 auto; text-align: center; }
         .about-content p { margin-bottom: 20px; font-size: 18px; }
+        .about-content h3 { color: var(--primary); font-size: 24px; margin: 35px 0 18px; }
         .contact-form { max-width: 600px; margin: 0 auto; background: var(--white); padding: 40px; border-radius: 4px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
         .form-group { margin-bottom: 20px; }
         .form-group label { display: block; margin-bottom: 8px; font-weight: bold; }
@@ -75,17 +51,15 @@
     </style>
 </head>
 <body>
-    <header>
-        <div class="nav-container">
-            <div class="logo" data-i18n="logo">Gitarrenstudio Wien</div>
-            <nav aria-label="Hauptnavigation">
-                <a href="#angebot" data-i18n="navOffer">Angebot</a>
-                <a href="#ueber-mich" data-i18n="navAbout">Über mich</a>
-                <a href="#preise" data-i18n="navPrices">Preise</a>
-                <button type="button" class="lang-switch" id="language-toggle" aria-label="Switch to English">EN</button>
-            </nav>
-        </div>
-    </header>
+    <header><div class="nav-container">
+        <div class="logo" data-i18n="logo">Gitarrenstudio Wien</div>
+        <nav aria-label="Hauptnavigation">
+            <a href="#angebot" data-i18n="navOffer">Angebot</a>
+            <a href="#ueber-mich" data-i18n="navAbout">Über mich</a>
+            <a href="#preise" data-i18n="navPrices">Preise</a>
+            <button type="button" class="lang-switch" id="language-toggle" aria-label="Switch to English">EN</button>
+        </nav>
+    </div></header>
     <section class="hero">
         <h1 data-i18n="heroTitle">Klassischer Gitarrenunterricht in Wien</h1>
         <p data-i18n="heroSubtitle">Entdecken Sie die Welt der klassischen Gitarre – vom Anfänger bis zur Musikhochschul-Vorbereitung.</p>
@@ -104,8 +78,11 @@
         <div class="about-content">
             <h2 class="section-title" data-i18n="aboutTitle">Über mich</h2>
             <p class="section-subtitle" data-i18n="aboutSubtitle">Ihr professioneller Gitarrenlehrer in Wien</p>
-            <p data-i18n="aboutParagraph1">Willkommen! Mein Name ist [Ihr Name]. Als diplomierter klassischer Gitarrist mit einem Master-Abschluss an der <strong>Universität für Musik und darstellende Kunst Wien</strong>, habe ich die Leidenschaft für die klassische Gitarre mit einer langen Tradition an Techniken und Ausdrucksformen verbunden.</p>
-            <p data-i18n="aboutParagraph2">Mein Unterricht verbindet die traditionsreiche Wiener Gitarrenschule mit modernen pädagogischen Ansätzen. Der Spaß am Musizieren steht dabei immer im Vordergrund, ob Sie gerade erst anfangen oder bereits auf einem fortgeschrittenen Niveau sind.</p>
+            <p data-i18n="aboutParagraph1">Willkommen! Mein Name ist Tizoc Romero. Als diplomierter klassischer Gitarrist mit einem Master-Abschluss an der Universität für Musik und darstellende Kunst Wien, habe ich die Leidenschaft für die klassische Gitarre mit einer langen Tradition an Techniken und Ausdrucksformen verbunden.</p>
+            <p data-i18n="aboutParagraph2">Mein Konzept für den Gitarrenunterricht baut auf der spielerischen Entdeckung des Instruments auf. Im Vordergrund stehen Freude und Spaß am Musizieren, was meine SchülerInnen langfristig dazu befähigt, die Herausforderungen eines Saiteninstruments erfolgreich zu meistern. Ich konzentriere mich dabei auf zugängliche Arrangements bekannter Werke, die motivieren und Begeisterung wecken!</p>
+            <p data-i18n="aboutParagraph3">Dank meiner 29-jährigen Bühnen- und Spielerfahrung sowie über 7 Jahren Unterrichtspraxis biete ich einen vielseitigen Unterricht, der weit über die klassische Gitarre hinausgeht – ich unterrichte verschiedenste Musikstile und passe mich individuell an die musikalischen Wünsche meiner SchülerInnen an. Nach dem Abschluss meines Konzertfach-Diploms bei Alvaro Pierri mit Auszeichnung vertiefe ich meine didaktischen Kenntnisse derzeit durch ein Studium der Instrumentalpädagogik an der mdw – Universität für Musik und darstellende Kunst Wien, einer der renommiertesten Musikuniversitäten der Welt.</p>
+            <h3 data-i18n="biographyTitle">Biografie</h3>
+            <p data-i18n="biographyText">Tizoc Romero begann seine musikalische Laufbahn im Alter von sechs Jahren in Paris mit traditioneller Mariachi-Musik bei seinem mexikanischen Vater, bevor er seine Leidenschaft für die klassische Gitarre entdeckte. Nach seinem Diplom am Konservatorium der Region Paris (2010) und Studien in Montréal folgte er 2012 seinem Mentor Alvaro Pierri an die mdw nach Wien, wo er sein Konzertfach-Studium mit Auszeichnung abschloss. Als Preisträger internationaler Wettbewerbe führte ihn seine Konzerttätigkeit als Solist und im „R2T2 Gitarrenduo“ auf bedeutende Bühnen wie das Wiener Konzerthaus sowie auf Tourneen durch Europa und Indien, wo er auch Meisterkurse für junge GitarristInnen leitete. Neben CD-Produktionen und Filmauftritten engagiert er sich regelmäßig für soziale und humanitäre Musikprojekte und wurde 2018 mit dem „Anny Felbermayer“-Stipendium der mdw ausgezeichnet.</p>
         </div>
     </section>
     <section id="preise" class="container">
@@ -130,7 +107,7 @@
         </form></div>
     </section>
     <footer>
-        <p data-i18n="copyright">&copy; 2026 Gitarrenstudio Wien - [Ihr Name]. Alle Rechte vorbehalten.</p>
+        <p data-i18n="copyright">&copy; 2026 Gitarrenstudio Wien - Tizoc Romero. Alle Rechte vorbehalten.</p>
         <p style="margin-top: 10px; font-size: 12px;"><a href="#" data-i18n="imprint">Impressum</a> | <a href="#" data-i18n="privacy">Datenschutz</a></p>
     </footer>
     <script>
@@ -148,20 +125,18 @@
                 offerPrepTitle: 'Konservatoriums-Vorbereitung',
                 offerPrepText: 'Intensive Vorbereitung auf Aufnahmeprüfungen (mdw / MUK) inklusive Technik-Coaching, Repertoire-Auswahl und Auftrittstraining.',
                 aboutTitle: 'Über mich', aboutSubtitle: 'Ihr professioneller Gitarrenlehrer in Wien',
-                aboutParagraph1: 'Willkommen! Mein Name ist [Ihr Name]. Als diplomierter klassischer Gitarrist mit einem Master-Abschluss an der <strong>Universität für Musik und darstellende Kunst Wien</strong>, habe ich die Leidenschaft für die klassische Gitarre mit einer langen Tradition an Techniken und Ausdrucksformen verbunden.',
-                aboutParagraph2: 'Mein Unterricht verbindet die traditionsreiche Wiener Gitarrenschule mit modernen pädagogischen Ansätzen. Der Spaß am Musizieren steht dabei immer im Vordergrund, ob Sie gerade erst anfangen oder bereits auf einem fortgeschrittenen Niveau sind.',
+                aboutParagraph1: 'Willkommen! Mein Name ist Tizoc Romero. Als diplomierter klassischer Gitarrist mit einem Master-Abschluss an der Universität für Musik und darstellende Kunst Wien, habe ich die Leidenschaft für die klassische Gitarre mit einer langen Tradition an Techniken und Ausdrucksformen verbunden.',
+                aboutParagraph2: 'Mein Konzept für den Gitarrenunterricht baut auf der spielerischen Entdeckung des Instruments auf. Im Vordergrund stehen Freude und Spaß am Musizieren, was meine SchülerInnen langfristig dazu befähigt, die Herausforderungen eines Saiteninstruments erfolgreich zu meistern. Ich konzentriere mich dabei auf zugängliche Arrangements bekannter Werke, die motivieren und Begeisterung wecken!',
+                aboutParagraph3: 'Dank meiner 29-jährigen Bühnen- und Spielerfahrung sowie über 7 Jahren Unterrichtspraxis biete ich einen vielseitigen Unterricht, der weit über die klassische Gitarre hinausgeht – ich unterrichte verschiedenste Musikstile und passe mich individuell an die musikalischen Wünsche meiner SchülerInnen an. Nach dem Abschluss meines Konzertfach-Diploms bei Alvaro Pierri mit Auszeichnung vertiefe ich meine didaktischen Kenntnisse derzeit durch ein Studium der Instrumentalpädagogik an der mdw – Universität für Musik und darstellende Kunst Wien, einer der renommiertesten Musikuniversitäten der Welt.',
+                biographyTitle: 'Biografie',
+                biographyText: 'Tizoc Romero begann seine musikalische Laufbahn im Alter von sechs Jahren in Paris mit traditioneller Mariachi-Musik bei seinem mexikanischen Vater, bevor er seine Leidenschaft für die klassische Gitarre entdeckte. Nach seinem Diplom am Konservatorium der Region Paris (2010) und Studien in Montréal folgte er 2012 seinem Mentor Alvaro Pierri an die mdw nach Wien, wo er sein Konzertfach-Studium mit Auszeichnung abschloss. Als Preisträger internationaler Wettbewerbe führte ihn seine Konzerttätigkeit als Solist und im „R2T2 Gitarrenduo“ auf bedeutende Bühnen wie das Wiener Konzerthaus sowie auf Tourneen durch Europa und Indien, wo er auch Meisterkurse für junge GitarristInnen leitete. Neben CD-Produktionen und Filmauftritten engagiert er sich regelmäßig für soziale und humanitäre Musikprojekte und wurde 2018 mit dem „Anny Felbermayer“-Stipendium der mdw ausgezeichnet.',
                 pricesTitle: 'Preise & Konditionen', pricesSubtitle: 'Transparente Honorare ohne versteckte Vertragslaufzeiten',
-                price30Title: '30 Minuten', price30Description: 'Ideal für jüngere Kinder',
-                price45Title: '45 Minuten', price45Description: 'Der Standard für Jugendliche & Erwachsene',
-                price60Title: '60 Minuten', price60Description: 'Perfekt für Fortgeschrittene & Vorbereitung', perLesson: 'pro Einzelstunde',
-                contactTitle: 'Jetzt Probestunde vereinbaren',
-                contactSubtitle: 'Lernen wir uns kennen! Die erste Kennenlern-Stunde (30 Min) ist komplett kostenlos.',
+                price30Title: '30 Minuten', price30Description: 'Ideal für jüngere Kinder', price45Title: '45 Minuten', price45Description: 'Der Standard für Jugendliche & Erwachsene', price60Title: '60 Minuten', price60Description: 'Perfekt für Fortgeschrittene & Vorbereitung', perLesson: 'pro Einzelstunde',
+                contactTitle: 'Jetzt Probestunde vereinbaren', contactSubtitle: 'Lernen wir uns kennen! Die erste Kennenlern-Stunde (30 Min) ist komplett kostenlos.',
                 nameLabel: 'Name *', emailLabel: 'E-Mail-Adresse *', phoneLabel: 'Telefonnummer', levelLabel: 'Erfahrung / Niveau',
-                levelBeginner: 'Anfänger (Keine Vorkenntnisse)', levelIntermediate: 'Leicht Fortgeschritten',
-                levelAdvanced: 'Fortgeschritten / Vorbereitung', messageLabel: 'Nachricht / Wunschtermin',
-                submitButton: 'Probestunde Absenden', copyright: '© 2026 Gitarrenstudio Wien - [Ihr Name]. Alle Rechte vorbehalten.',
-                imprint: 'Impressum', privacy: 'Datenschutz', namePlaceholder: 'Ihr vollständiger Name', emailPlaceholder: 'name@beispiel.at',
-                phonePlaceholder: '+43 660 ...', messagePlaceholder: 'Hinterlassen Sie mir eine Nachricht...',
+                levelBeginner: 'Anfänger (Keine Vorkenntnisse)', levelIntermediate: 'Leicht Fortgeschritten', levelAdvanced: 'Fortgeschritten / Vorbereitung', messageLabel: 'Nachricht / Wunschtermin',
+                submitButton: 'Probestunde Absenden', copyright: '© 2026 Gitarrenstudio Wien - Tizoc Romero. Alle Rechte vorbehalten.', imprint: 'Impressum', privacy: 'Datenschutz',
+                namePlaceholder: 'Ihr vollständiger Name', emailPlaceholder: 'name@beispiel.at', phonePlaceholder: '+43 660 ...', messagePlaceholder: 'Hinterlassen Sie mir eine Nachricht...',
                 alert: 'Vielen Dank für Ihre Anfrage! Ich werde mich in Kürze bei Ihnen melden.'
             },
             en: {
@@ -170,27 +145,21 @@
                 heroSubtitle: 'Discover the world of classical guitar—from beginner lessons to conservatory entrance preparation.',
                 heroCta: 'Book a free trial lesson', offerTitle: 'Lessons I Offer',
                 offerSubtitle: 'Tailored lessons for every age and level in the heart of Vienna',
-                offerChildrenTitle: 'Children & Teenagers',
-                offerChildrenText: 'A fun introduction to classical guitar. Develop rhythm, music reading and healthy playing posture from the very beginning.',
-                offerAdultsTitle: 'Adults & Returning Players',
-                offerAdultsText: 'Flexible lessons that fit your schedule. Learn your favorite pieces, from Bach to Tárrega, without pressure.',
-                offerPrepTitle: 'Conservatory Preparation',
-                offerPrepText: 'Focused preparation for entrance auditions (mdw / MUK), including technique coaching, repertoire selection and performance practice.',
+                offerChildrenTitle: 'Children & Teenagers', offerChildrenText: 'A fun introduction to classical guitar. Develop rhythm, music reading and healthy playing posture from the very beginning.',
+                offerAdultsTitle: 'Adults & Returning Players', offerAdultsText: 'Flexible lessons that fit your schedule. Learn your favorite pieces, from Bach to Tárrega, without pressure.',
+                offerPrepTitle: 'Conservatory Preparation', offerPrepText: 'Focused preparation for entrance auditions (mdw / MUK), including technique coaching, repertoire selection and performance practice.',
                 aboutTitle: 'About Me', aboutSubtitle: 'Your professional guitar teacher in Vienna',
-                aboutParagraph1: 'Welcome! My name is [Your Name]. I am a classical guitarist with a master’s degree from the <strong>University of Music and Performing Arts Vienna</strong>, and I combine a long tradition of technique with expressive musical practice.',
-                aboutParagraph2: 'My teaching combines Vienna’s rich guitar tradition with modern teaching methods. Enjoying music is always at the heart of my lessons, whether you are just starting out or already at an advanced level.',
+                aboutParagraph1: 'Welcome! My name is Tizoc Romero. I am a classical guitarist with a master’s degree from the University of Music and Performing Arts Vienna, where I developed my passion for classical guitar alongside a rich tradition of technique and musical expression.',
+                aboutParagraph2: 'My teaching approach is based on discovering the instrument through play. Above all, I want my students to enjoy making music; this helps them build the skills and confidence to meet the challenges of a string instrument over time. I focus on accessible arrangements of well-known works that inspire and spark enthusiasm!',
+                aboutParagraph3: 'With 29 years of performing and playing experience and more than 7 years of teaching, I offer versatile lessons that go well beyond classical guitar. I teach a wide range of styles and tailor lessons to each student’s musical interests. After graduating with distinction from the concert performance program under Alvaro Pierri, I am now deepening my teaching skills through instrumental pedagogy studies at mdw – the University of Music and Performing Arts Vienna, one of the world’s most renowned music universities.',
+                biographyTitle: 'Biography',
+                biographyText: 'Tizoc Romero began his musical journey at the age of six in Paris, playing traditional Mariachi music with his Mexican father before discovering his passion for classical guitar. After graduating from the Conservatoire à Rayonnement Régional de Paris in 2010 and studying in Montréal, he followed his mentor Alvaro Pierri to mdw in Vienna in 2012, where he completed his concert performance studies with distinction. An award winner at international competitions, he has performed as a soloist and with the R2T2 Guitar Duo on major stages such as the Wiener Konzerthaus, and toured Europe and India, where he also led masterclasses for young guitarists. Alongside CD recordings and film appearances, he regularly supports social and humanitarian music projects. In 2018, he received the mdw Anny Felbermayer Scholarship.',
                 pricesTitle: 'Prices & Terms', pricesSubtitle: 'Transparent rates with no hidden long-term commitments',
-                price30Title: '30 minutes', price30Description: 'Ideal for younger children',
-                price45Title: '45 minutes', price45Description: 'The standard for teenagers & adults',
-                price60Title: '60 minutes', price60Description: 'Perfect for advanced players & audition preparation', perLesson: 'per private lesson',
-                contactTitle: 'Book a Trial Lesson',
-                contactSubtitle: 'Let’s get to know each other! Your first 30-minute introductory lesson is completely free.',
-                nameLabel: 'Name *', emailLabel: 'Email address *', phoneLabel: 'Phone number', levelLabel: 'Experience / Level',
-                levelBeginner: 'Beginner (no previous experience)', levelIntermediate: 'Early intermediate',
-                levelAdvanced: 'Advanced / audition preparation', messageLabel: 'Message / Preferred time',
-                submitButton: 'Send Trial Lesson Request', copyright: '© 2026 Vienna Guitar Studio - [Your Name]. All rights reserved.',
-                imprint: 'Legal notice', privacy: 'Privacy policy', namePlaceholder: 'Your full name', emailPlaceholder: 'name@example.com',
-                phonePlaceholder: '+43 660 ...', messagePlaceholder: 'Leave me a message...',
+                price30Title: '30 minutes', price30Description: 'Ideal for younger children', price45Title: '45 minutes', price45Description: 'The standard for teenagers & adults', price60Title: '60 minutes', price60Description: 'Perfect for advanced players & audition preparation', perLesson: 'per private lesson',
+                contactTitle: 'Book a Trial Lesson', contactSubtitle: 'Let’s get to know each other! Your first 30-minute introductory lesson is completely free.',
+                nameLabel: 'Name *', emailLabel: 'Email address *', phoneLabel: 'Phone number', levelLabel: 'Experience / Level', levelBeginner: 'Beginner (no previous experience)', levelIntermediate: 'Early intermediate', levelAdvanced: 'Advanced / audition preparation', messageLabel: 'Message / Preferred time',
+                submitButton: 'Send Trial Lesson Request', copyright: '© 2026 Vienna Guitar Studio - Tizoc Romero. All rights reserved.', imprint: 'Legal notice', privacy: 'Privacy policy',
+                namePlaceholder: 'Your full name', emailPlaceholder: 'name@example.com', phonePlaceholder: '+43 660 ...', messagePlaceholder: 'Leave me a message...',
                 alert: 'Thank you for your inquiry! I will get back to you shortly.'
             }
         };
